@@ -12,7 +12,7 @@ A clone of Mario NES using Coco2d Javascript engine.
 
 ###Sprites:
 I took the sprites from: [http://www.spriters-resource.com/nes/supermariobros/](http://www.spriters-resource.com/nes/supermariobros/).
-I edited this tiles using photoshop but you could use other graphics editing software.
+I edited these tiles using photoshop but you could use other graphics editing software.
 
 ###Audio: 
 
