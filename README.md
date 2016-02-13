@@ -19,4 +19,11 @@ I edited these tiles using photoshop but you could use other graphics editing so
 TODO
 
 ###Limitations:
-We can have just one `Tileset` in tiled map editor. This is because cocos2d limit you to have just one `Tileset` in tmx files.
+- We can have just one `Tileset` in tiled map editor. This is because cocos2d limit you to have just one `Tileset` in tmx files.
+- First commit or pull can take several time depending on your internet connection speed.
+
+###Tiles
+If your going to use photoshop to edit your tiles, please use RGB/16 as Image Mode and Saved for web as PNG-8 file format.
+I was looking an error in tile redering just for that, it tooks me  hours; from lastest commit until now :/.
+I had to use render mode 1 (canvas), if I use 0 or 2(webGl) some weird lines are shown when redering the game :/
+
