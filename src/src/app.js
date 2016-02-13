@@ -1,36 +1,23 @@
-
 var HelloWorldLayer = cc.Layer.extend({
-    sprite:null,
     ctor:function () {
-        //////////////////////////////
-        // 1. super init first
         this._super();
-
-        /////////////////////////////
-        // 2. add a menu item with "X" image, which is clicked to quit the program
-        //    you may modify it.
-        // ask the window size
-        var size = cc.winSize;
-
-        /////////////////////////////
-        // 3. add your codes below...
-        // add a label shows "Hello World"
-        // create and initialize a label
-        var helloLabel = new cc.LabelTTF("Hello World", "Arial", 38);
-        // position the label on the center of the screen
-        helloLabel.x = size.width / 2;
-        helloLabel.y = size.height / 2 + 200;
-        // add the label as a child to this layer
-        this.addChild(helloLabel, 5);
-
-        // add "HelloWorld" splash screen"
-        this.sprite = new cc.Sprite(res.HelloWorld_png);
-        this.sprite.attr({
-            x: size.width / 2,
-            y: size.height / 2
+        
+        var world = new cc.TMXTiledMap("res/tmx/1_1.tmx");        
+        cc.director.setDepthTest(true);
+        world.runAction(new cc.ScaleBy(0, 2, 2));
+        this.addChild(world, 5, 1);
+        
+        
+        var test = world.getObjectGroup("snails");
+        
+        var hero = new cc.Sprite("res/tmx/tiles.png", cc.rect(656, 352, 12, 15));
+        this.addChild(hero);
+        this.runAction(cc.follow(hero, cc.rect(0, 0, world.width, world.height)));
+        hero.attr({
+            x: 100,
+            y: 100
         });
-        this.addChild(this.sprite, 0);
-
+        
         return true;
     }
 });

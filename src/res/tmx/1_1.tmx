@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="224" height="15" tilewidth="16" tileheight="16" nextobjectid="3">
+ <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16" tilecount="3904" columns="64">
+  <image source="tiles.png" width="1024" height="976"/>
+ </tileset>
+ <layer name="Sky" width="224" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3ZMQrDMBBFQSf4hjqR8P18plRuEuwiq/AVM8W0y7LwUKH2XJYGfGVfa9L7wz/TH+Rsbz1tF/QHY5115f2D39Mf5OgPcvQHOfqDHP1Bjv4gx/8f5OgPcqr9Pfhw3HbEjOqcO7jzHXpRev8Z6W++e86qF70AmmEsRYA0AAA=
+  </data>
+ </layer>
+ <layer name="OverSky" width="224" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2Xa26DQAyEgdBIfaXqkdLHj6YkUo/U3qw9WRwFh5W13jXLI0s1n2SBYM2OrBkQRQEAAAAAAEBRPK+n32M7wx4ALJEv5A+Aq7H0/JXVdM/OiXIVLnXtgPn07dX0XO5VbXnu/ze29bliLD1/AOQGZw/5A2Be3OwhfwDMh8xeav4e6q5G0TVC/uS/SFWfr7nHKfgm7T9G/X3WWrj8Mw34X9J61f+0Kn5ueX6fPRnXrxbvumtTe6W21Hn7speav0fq21A9TZC/u8y+hSXpqQKafunen1G/XJsjuc2f8WXI51+p3+d1q/fHQsueRb/M3+mb1zg1xjeQ83dLxw+q+0QP9PFOLFeuthdjpmL6Y/m7tveHzn8qQhlyr0n9mtc1//P8rd7QcPtD2ZP7++Yv87dpv337ujtPZUXPrqlu1t3eO6rPiAcaurd36tD275S+xlnHxHLlW9eIPU9wpiz6ea2mX/O+T38KPv3M0Plb9k3RL/3Ke8rrUn/I6/K6nL/0Rl/93B/Lnu/dIecvM8qZOzj5S/XFK/W9Ub1n9r4FAAAA5uIILFvzdoA0AAA=
+  </data>
+ </layer>
+ <objectgroup name="StarPoint">
+  <object id="2" name="StaringPoint" x="40" y="192" width="16" height="16"/>
+ </objectgroup>
+ <imagelayer name="Guide" visible="0" opacity="0.41">
+  <image source="1_1.png"/>
+ </imagelayer>
+</map>
