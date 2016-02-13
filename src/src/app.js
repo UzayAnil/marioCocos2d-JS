@@ -4,18 +4,15 @@ var HelloWorldLayer = cc.Layer.extend({
         
         var world = new cc.TMXTiledMap("res/tmx/1_1.tmx");        
         cc.director.setDepthTest(true);
-        world.runAction(new cc.ScaleBy(0, 2, 2));
-        this.addChild(world, 5, 1);
-        
-        
-        var test = world.getObjectGroup("snails");
-        
-        var hero = new cc.Sprite("res/tmx/tiles.png", cc.rect(656, 352, 12, 15));
-        this.addChild(hero);
+        this.addChild(world, 1);
+                
+        var hero = new cc.Sprite("res/tmx/tiles.png", cc.rect(640, 384, 32, 16));
+        this.addChild(hero, 2);
         this.runAction(cc.follow(hero, cc.rect(0, 0, world.width, world.height)));
+        var startPoint = world.getObjectGroup("StarPoint").getObjects()[0];
         hero.attr({
-            x: 100,
-            y: 100
+            x: startPoint.x + 8,
+            y: startPoint.y + 8
         });
         
         return true;
