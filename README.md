@@ -17,3 +17,6 @@ I edited these tiles using photoshop but you could use other graphics editing so
 ###Audio: 
 
 TODO
+
+###Limitations:
+We can have just one `Tileset` in tiled map editor. This is because cocos2d limit you to have just one `Tileset` in tmx files.
