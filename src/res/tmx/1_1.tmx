@@ -17,7 +17,12 @@
  <objectgroup name="StarPoint">
   <object id="2" name="StaringPoint" x="40" y="192" width="16" height="16"/>
  </objectgroup>
- <imagelayer name="Guide" visible="0" opacity="0.41">
+ <layer name="OverOverSky" width="224" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TMQEAIAzEwF9qA5yBfxfggLEDdwqyJAEAAKDLqGRWdwX8ad33tv8AAAAAAAAAAODpAJz82TyANAAA
+  </data>
+ </layer>
+ <imagelayer name="Guide" visible="0" opacity="0.14">
   <image source="1_1.png"/>
  </imagelayer>
 </map>
