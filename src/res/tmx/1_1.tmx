@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="224" height="15" tilewidth="16" tileheight="16" nextobjectid="73">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="224" height="15" tilewidth="16" tileheight="16" nextobjectid="78">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16" tilecount="3904" columns="64">
   <image source="tiles.png" width="1024" height="976"/>
  </tileset>
@@ -103,6 +103,9 @@
   </object>
   <object id="70" name="StaringPoint" type="StaringPoint" x="40" y="192" width="16" height="16"/>
   <object id="71" name="GreenKoopaTroopa" type="GreenKoopaTroopa" x="1712" y="184" width="16" height="24"/>
+  <object id="73" name="Hole" type="Hole" x="1104" y="208" width="32" height="16"/>
+  <object id="74" name="Hole" type="Hole" x="1376" y="208" width="48" height="16"/>
+  <object id="77" name="Hole" type="Hole" x="2448" y="144" width="32" height="16"/>
  </objectgroup>
  <imagelayer name="Guide" visible="0" opacity="0.16">
   <image source="1_1.png"/>
