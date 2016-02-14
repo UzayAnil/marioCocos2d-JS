@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="224" height="15" tilewidth="16" tileheight="16" nextobjectid="3">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="224" height="15" tilewidth="16" tileheight="16" nextobjectid="73">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16" tilecount="3904" columns="64">
   <image source="tiles.png" width="1024" height="976"/>
  </tileset>
- <layer name="Sky" width="224" height="15">
+ <layer name="Background" width="224" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC+3ZMQrDMBBFQSf4hjqR8P18plRuEuwiq/AVM8W0y7LwUKH2XJYGfGVfa9L7wz/TH+Rsbz1tF/QHY5115f2D39Mf5OgPcvQHOfqDHP1Bjv4gx/8f5OgPcqr9Pfhw3HbEjOqcO7jzHXpRev8Z6W++e86qF70AmmEsRYA0AAA=
   </data>
@@ -14,15 +14,97 @@
    H4sIAAAAAAAAC+2Xa26DQAyEgdBIfaXqkdLHj6YkUo/U3qw9WRwFh5W13jXLI0s1n2SBYM2OrBkQRQEAAAAAAEBRPK+n32M7wx4ALJEv5A+Aq7H0/JXVdM/OiXIVLnXtgPn07dX0XO5VbXnu/ze29bliLD1/AOQGZw/5A2Be3OwhfwDMh8xeav4e6q5G0TVC/uS/SFWfr7nHKfgm7T9G/X3WWrj8Mw34X9J61f+0Kn5ueX6fPRnXrxbvumtTe6W21Hn7speav0fq21A9TZC/u8y+hSXpqQKafunen1G/XJsjuc2f8WXI51+p3+d1q/fHQsueRb/M3+mb1zg1xjeQ83dLxw+q+0QP9PFOLFeuthdjpmL6Y/m7tveHzn8qQhlyr0n9mtc1//P8rd7QcPtD2ZP7++Yv87dpv337ujtPZUXPrqlu1t3eO6rPiAcaurd36tD275S+xlnHxHLlW9eIPU9wpiz6ea2mX/O+T38KPv3M0Plb9k3RL/3Ke8rrUn/I6/K6nL/0Rl/93B/Lnu/dIecvM8qZOzj5S/XFK/W9Ub1n9r4FAAAA5uIILFvzdoA0AAA=
   </data>
  </layer>
- <objectgroup name="StarPoint">
-  <object id="2" name="StaringPoint" x="40" y="192" width="16" height="16"/>
- </objectgroup>
- <layer name="OverOverSky" width="224" height="15">
+ <layer name="OverOverSky" width="224" height="15" offsetx="0" offsety="4">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC+3TMQEAIAzEwF9qA5yBfxfggLEDdwqyJAEAAKDLqGRWdwX8ad33tv8AAAAAAAAAAODpAJz82TyANAAA
   </data>
  </layer>
- <imagelayer name="Guide" visible="0" opacity="0.14">
+ <objectgroup name="Items">
+  <object id="3" name="Goomba" type="Goomba" x="352" y="192" width="16" height="16"/>
+  <object id="6" name="Goomba" type="Goomba" x="640" y="192" width="16" height="16"/>
+  <object id="7" name="Goomba" type="Goomba" x="816" y="192" width="16" height="16"/>
+  <object id="8" name="Goomba" type="Goomba" x="839" y="192" width="16" height="16"/>
+  <object id="10" name="Coin" type="Coin" x="256" y="144" width="16" height="16"/>
+  <object id="11" name="SuperMushroom" type="SuperMushroom" x="336" y="144" width="16" height="16"/>
+  <object id="12" name="Coin" type="Coin" x="352" y="80" width="16" height="16"/>
+  <object id="13" name="Coin" type="Coin" x="368" y="144" width="16" height="16"/>
+  <object id="14" name="A" type="Pie" x="912" y="144" width="32" height="16">
+   <properties>
+    <property name="PieType" value="enter"/>
+   </properties>
+  </object>
+  <object id="16" name="UpMushroom" type="UpMushroom" x="1024" y="128" width="16" height="16">
+   <properties>
+    <property name="hidden" value="true"/>
+   </properties>
+  </object>
+  <object id="17" name="Super Mushroom" type="Super Mushroom" x="1248" y="144" width="16" height="16"/>
+  <object id="18" name="Goomba" type="Goomba" x="1280" y="64" width="16" height="16"/>
+  <object id="19" name="Goomba" type="Goomba" x="1312" y="64" width="16" height="16"/>
+  <object id="20" name="Coin" type="Coin" x="1504" y="80" width="16" height="16"/>
+  <object id="21" name="MultiCoin" type="MultiCoin" x="1504" y="144" width="16" height="16">
+   <properties>
+    <property name="amount" value="10"/>
+   </properties>
+  </object>
+  <object id="22" name="Goomba" type="Goomba" x="1552" y="192" width="16" height="16"/>
+  <object id="23" name="Goomba" type="Goomba" x="1576" y="192" width="16" height="16"/>
+  <object id="24" name="SuperStar" type="SuperStar" x="1616" y="144" width="16" height="16"/>
+  <object id="25" name="Coin" type="Coin" x="1696" y="144" width="16" height="16"/>
+  <object id="26" name="SuperMushroom" type="SuperMushroom" x="1744" y="80" width="16" height="16"/>
+  <object id="27" name="Coin" type="Coin" x="1744" y="144" width="16" height="16"/>
+  <object id="28" name="Coin" type="Coin" x="1792" y="144" width="16" height="16"/>
+  <object id="29" name="Goomba" type="Goomba" x="1824" y="192" width="16" height="16"/>
+  <object id="33" name="Goomba" type="Goomba" x="1847" y="192" width="16" height="16"/>
+  <object id="34" name="Goomba" type="Goomba" x="1984" y="192" width="16" height="16"/>
+  <object id="35" name="Goomba" type="Goomba" x="2008" y="192" width="16" height="16"/>
+  <object id="36" name="Goomba" type="Goomba" x="2048" y="192" width="16" height="16"/>
+  <object id="37" name="Goomba" type="Goomba" x="2071" y="192" width="16" height="16"/>
+  <object id="38" name="Coin" type="Coin" x="2064" y="80" width="16" height="16"/>
+  <object id="39" name="Coin" type="Coin" x="2080" y="80" width="16" height="16"/>
+  <object id="40" name="B" type="Pie" x="2608" y="176" width="32" height="16">
+   <properties>
+    <property name="type" value="exit"/>
+   </properties>
+  </object>
+  <object id="41" name="Coin" type="Coin" x="2720" y="144" width="16" height="16"/>
+  <object id="42" name="Goomba" type="Goomba" x="2784" y="192" width="16" height="16"/>
+  <object id="43" name="Goomba" type="Goomba" x="2807" y="192" width="16" height="16"/>
+  <object id="45" name="EndPoint" type="EndPoint" x="3168" y="0" width="16" height="208"/>
+  <object id="46" name="Flag" type="Flag" x="3160" y="48" width="16" height="16"/>
+  <object id="47" name="EnterPoint" type="EnterPoint" x="3352" y="32" width="16" height="16">
+   <properties>
+    <property name="id" value="A"/>
+   </properties>
+  </object>
+  <object id="48" name="Coin" type="Coin" x="3424" y="80" width="16" height="16"/>
+  <object id="50" name="Coin" type="Coin" x="3408" y="80" width="16" height="16"/>
+  <object id="51" name="Coin" type="Coin" x="3440" y="80" width="16" height="16"/>
+  <object id="52" name="Coin" type="Coin" x="3456" y="80" width="16" height="16"/>
+  <object id="53" name="Coin" type="Coin" x="3472" y="80" width="16" height="16"/>
+  <object id="54" name="Coin" type="Coin" x="3392" y="112" width="16" height="16"/>
+  <object id="55" name="Coin" type="Coin" x="3424" y="112" width="16" height="16"/>
+  <object id="56" name="Coin" type="Coin" x="3408" y="112" width="16" height="16"/>
+  <object id="57" name="Coin" type="Coin" x="3472" y="112" width="16" height="16"/>
+  <object id="58" name="Coin" type="Coin" x="3456" y="112" width="16" height="16"/>
+  <object id="59" name="Coin" type="Coin" x="3440" y="112" width="16" height="16"/>
+  <object id="60" name="Coin" type="Coin" x="3488" y="112" width="16" height="16"/>
+  <object id="61" name="Coin" type="Coin" x="3488" y="144" width="16" height="16"/>
+  <object id="62" name="Coin" type="Coin" x="3456" y="144" width="16" height="16"/>
+  <object id="63" name="Coin" type="Coin" x="3440" y="144" width="16" height="16"/>
+  <object id="64" name="Coin" type="Coin" x="3392" y="144" width="16" height="16"/>
+  <object id="65" name="Coin" type="Coin" x="3424" y="144" width="16" height="16"/>
+  <object id="66" name="Coin" type="Coin" x="3472" y="144" width="16" height="16"/>
+  <object id="67" name="Coin" type="Coin" x="3408" y="144" width="16" height="16"/>
+  <object id="69" name="EnterPoint" type="EnterPoint" x="3536" y="176" width="16" height="32">
+   <properties>
+    <property name="id" value="B"/>
+   </properties>
+  </object>
+  <object id="70" name="StaringPoint" type="StaringPoint" x="40" y="192" width="16" height="16"/>
+  <object id="71" name="GreenKoopaTroopa" type="GreenKoopaTroopa" x="1712" y="184" width="16" height="24"/>
+ </objectgroup>
+ <imagelayer name="Guide" visible="0" opacity="0.16">
   <image source="1_1.png"/>
  </imagelayer>
 </map>
