@@ -23,7 +23,7 @@ TODO
 - First commit or pull can take several time depending on your internet connection speed.
 
 ###Tiles
-If your going to use photoshop to edit your tiles, please use RGB/16 as Image Mode and Saved for web as PNG-8 file format.
 I was looking an error in tile redering just for that, it tooks me  hours; from lastest commit until now :/.
+It's weird but in resume I'm not using tsx files.
 I had to use render mode 1 (canvas), if I use 0 or 2(webGl) some weird lines are shown when redering the game :/
 
