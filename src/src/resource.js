@@ -1,13 +1,11 @@
-//TODO: Remove the guide images before deploy, just for test
 var res = [
-    "res/tmx/tiles.png",
-    "res/tmx/1_1.tmx",
-    "res/tmx/Goomba_01.png",
-    "res/tmx/Goomba_02.png"
+    "res/tmx/tiles.png"
 ];
 
-var g_resources = [];
-
-for (var i in res) {
-    g_resources.push(res[i]);
+function AddMapsToRes(levels, subLevels){
+    for(var i = 1; i <= levels; i++)
+        for(var j = 1; j<= subLevels; j++)
+            res.push("res/tmx/" + i + "_" + j + ".tmx");
 }
+
+AddMapsToRes(1,1);

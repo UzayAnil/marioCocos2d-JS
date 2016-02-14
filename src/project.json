@@ -12,7 +12,18 @@
     "modules" : ["cocos2d"],
 
     "jsList" : [
-        "src/resource.js",
-        "src/app.js"
+        "src/Resource.js",
+        "src/Constants.js",
+        "src/Utils.js",
+        
+        "src/Actions.js",
+        "src/CacheAnimationLoader.js",
+        "src/Singletons.js",
+        
+        "src/Animations.js",
+        "src/Goomba.js",
+        "src/Hero.js",
+        
+        "src/World.js"
     ]
 }
