@@ -1,3 +1,4 @@
+var tiles = "res/tmx/tiles.png";
 var controls = {
     leflt:"left",
     right:"right",
@@ -40,12 +41,33 @@ function Actions (){
 
 var actionManager = new Actions();
 
+var Goomba = cc.Sprite.extend({
+    ctor: function(data){
+        this._super(tiles, cc.rect(0,16,16,16));
+        this.attr({
+            x:data.x,
+            y:data.y,
+            anchorX: 0,
+            anchorY: 0,
+        });
+        this.scheduleUpdate();
+        return true;
+    },
+    update: function(dt){
+        this.runAction(cc.moveTo(this.speed, cc.p(this.x+ this.moveFactor, this.y)));
+    },
+    speed: 0.8,
+    moveFactor: 1
+});
+
 var Hero = cc.Sprite.extend({
     ctor:function(sprite, clipping, p){
         this._super(sprite, clipping);
         this.attr({
-            x: p.x + 8,
-            y: p.y + 8
+            anchorX: 0,
+            anchorY: 0,
+            x: p.x,
+            y: p.y
         });
         this.scheduleUpdate();
         
@@ -91,13 +113,26 @@ var Hero = cc.Sprite.extend({
 var HelloWorldLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
-        
+        var self = this;
         var world = new cc.TMXTiledMap("res/tmx/1_1.tmx");        
         cc.director.setDepthTest(true);
         this.addChild(world, 1);
         
+        world
+            .getObjectGroup("Items")
+            .getObjects()
+            .forEach(function(obj){                
+                switch (obj.type){    
+                    case "Goomba":
+                        self.addChild( new Goomba(obj), 2);
+                        break;
+                    default:
+                        break;
+                }
+                
+            });
         
-        var hero = new Hero("res/tmx/tiles.png", cc.rect(640, 384, 16, 16), world.getObjectGroup("StarPoint").getObjects()[0]);
+        var hero = new Hero(tiles, cc.rect(640, 384, 16, 16), world.getObjectGroup("Items").getObject("StaringPoint"));
         this.addChild(hero, 2);
         this.runAction(cc.follow(hero, cc.rect(0, 0, world.width, world.height)));
         actionManager.hero = hero;
