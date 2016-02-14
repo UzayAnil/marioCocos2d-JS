@@ -88,3 +88,6 @@ proj.android/libraries/*/local.properties
 # Generated documentation, it can be regenerated using doxygen #
 ######################
 docs/html/*
+
+src/frameworks/cocos2d-x
+src/frameworks/runtime-src
