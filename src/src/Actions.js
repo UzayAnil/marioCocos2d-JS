@@ -5,31 +5,32 @@ function Actions(){
     this.foward = function(){};
     this.back = function(){};
     this.jump = function(){};
+    this.stop = function(){};
     this.hero = {};
     
     this.execute = function(){
-        if(this.queue.length <=0 ) {
+        if(this.queue.length <= 0){
             this.stop(this.hero);
-            return;
         }
-        
-        if(this.queue[0] == controls.right){
-            this.foward(this.hero);
-        }
-        else if(this.queue[0] == controls.leflt){
-            this.back(this.hero);
-        }
-        else if(this.queue[0] == controls.up){
-            this.jump(this.hero);
+        for(var i = 0; i < this.queue.length; i++){
+            var ac = this.queue[i];
+            if(ac == controls.right){
+                this.foward(this.hero);
+            }
+            else if(ac == controls.leflt){
+                this.back(this.hero);
+            }
+            else if(ac == controls.up){
+                this.jump(this.hero);
+            }
         }
     };
     
     this.push = function(control) {
+        for(var i = 0; i < this.queue.length; i++)
+            if(this.queue[i] === control)
+                return;
         this.queue.push(control);
-    };
-    
-    this.clear = function(){
-        this.queue = [];
     };
     
     this.load = function(mainWindow, hero){
@@ -53,7 +54,7 @@ function Actions(){
                 }
             },
             onKeyReleased: function(keyCode, event){
-                self.clear();
+                self.queue.pop();
             }
         }, mainWindow);
     }

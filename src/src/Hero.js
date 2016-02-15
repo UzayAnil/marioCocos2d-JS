@@ -38,7 +38,7 @@ var Hero = cc.Sprite.extend({
     jump: function(hero){
         if(hero.jumpping())
             return;
-        var action = cc.jumpBy(hero.speed,  cc.p(0, 0), 50, 1);
+        var action = cc.jumpBy(hero.speed,  cc.p(0, 0), 70, 1);
         hero.jumpping = function(){
             if(action.isDone()){
                 hero.jumpping = function(){
@@ -57,11 +57,11 @@ var Hero = cc.Sprite.extend({
         if(!hero.currentAction)
             return;
         hero.currentAction.stop();
-        if(hero.currentAction.isDone()){
-            hero.stopAllActions();
-            hero.currentAction = null;
-            hero.setSpriteFrame(cc.spriteFrameCache.getSpriteFrame(hero.heroName));
-        }     
+        if(!hero.currentAction.isDone() || hero.jumpping())
+            return;
+        hero.stopAllActions();
+        hero.currentAction = null;
+        hero.setSpriteFrame(cc.spriteFrameCache.getSpriteFrame(hero.heroName));
     },
     update: function(dt){
         actionManager.execute();
