@@ -12,6 +12,7 @@ controls = {
 };
 
 animationsNames = {
-    heroWalk: "mario",
-    goombaWalk: "goomba"
+    heroWalk: "heroWalk",
+    goombaWalk: "goombaWalk",
+    heroJump: "heroJump"
 };

@@ -4,19 +4,18 @@ addSpriteFrame = function(data){
         cc.spriteFrameCache
             .addSpriteFrame(new cc.SpriteFrame(tiles, d.clipping), d.name);    
     });
-
     return data.map(function(d){
         return d.name;
     });
 };
 
-addCacheAnimation = function(name, spritesFramesNames, delay){   
+addCacheAnimation = function(name, spritesFramesNames, delay, setOriginal){   
     var spritesFrames = [];
     spritesFramesNames.forEach(function(sFName){
         spritesFrames.push(cc.spriteFrameCache.getSpriteFrame(sFName));
     });
     var animation = new cc.Animation(spritesFrames);
     animation.setDelayPerUnit(delay);
-    animation.setRestoreOriginalFrame(true);
+    animation.setRestoreOriginalFrame(setOriginal);
     cc.animationCache.addAnimation(animation, name); 
 };

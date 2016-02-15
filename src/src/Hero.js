@@ -41,6 +41,7 @@ var Hero = cc.Sprite.extend({
         var action = cc.jumpBy(hero.speed,  cc.p(0, 0), 70, 1);
         hero.jumpping = function(){
             if(action.isDone()){
+                
                 hero.jumpping = function(){
                     return false;
                 }
@@ -48,7 +49,6 @@ var Hero = cc.Sprite.extend({
             return !action.isDone();
         };
         hero.runAction(action);
-        
     },
     jumpping: function(){
         return false;

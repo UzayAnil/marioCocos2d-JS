@@ -36,8 +36,9 @@ var WorldScene = cc.Scene.extend({
         this._super();
         this.level = level;
         this.subLevel = subLevel;
-        cacheAnimationLoader.load("mario")
-        cacheAnimationLoader.load("goomba");
+        cacheAnimationLoader.load(animationsNames.goombaWalk);
+        cacheAnimationLoader.load(animationsNames.heroJump);
+        cacheAnimationLoader.load(animationsNames.heroWalk);
         return true;
     },
     level: null,
