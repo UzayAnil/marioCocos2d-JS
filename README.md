@@ -1,3 +1,5 @@
+#It's an ongoing project it's not finished yet. If you wanna help me you you are welcome :D
+
 Mario Cocos2d-JS
 ====================
 
