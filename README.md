@@ -10,6 +10,9 @@ A clone of Mario NES using Coco2d Javascript engine.
 - Create others maps using tiled map.
 - Add colissions
 - Add level manager
+- Add 
+- Add game over logic
+- Add lost hero power.
 
 ###Tools:
 - [Python 2.7.10](https://www.python.org/downloads/release/python-2710/)
