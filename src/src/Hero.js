@@ -1,19 +1,25 @@
-var Hero = cc.Sprite.extend({
-    ctor:function(heroName, p){
-        this._super("#"+heroName);
-        this.attr({
-            anchorX: 0,
-            anchorY: 0,
-            x: p.x,
-            y: p.y
-        });
-        this.scheduleUpdate();
+var Hero = cc.PhysicsSprite.extend({
+    ctor: function(heroName, starPoint){
         this.heroName = heroName;
+        this._super("#"+heroName);
+        
+        this.scheduleUpdate();
         actionManager.hero = this;
         actionManager.foward = this.foward;
         actionManager.back = this.back;
         actionManager.jump = this.jump;
         actionManager.stop = this.stop;
+        
+        var body = new cp.Body(800, cp.momentForBox(800, this.width, this.height));
+        body.setPos(cc.p(starPoint.x, starPoint.y));
+        pSpace.addBody(body);
+        
+        var shape = new cp.BoxShape(body, 16, 16);
+        shape.setElasticity(0);
+        shape.setFriction(0.5);
+//        //shape.setCollisionType(collision_type);
+        pSpace.addShape(shape);
+        this.setBody(body);
         
         return true;
     },
@@ -36,28 +42,27 @@ var Hero = cc.Sprite.extend({
         hero.runAction(hero.currentAction);
     },
     jump: function(hero){
-        if(hero.jumpping())
+        if(hero.y < 0)
             return;
-        var action = cc.jumpBy(hero.speed,  cc.p(0, 0), 70, 1);
-        hero.jumpping = function(){
-            if(action.isDone()){
-                
-                hero.jumpping = function(){
-                    return false;
-                }
-            }
-            return !action.isDone();
-        };
-        hero.runAction(action);
+        if(hero.y >= (16*16)){
+            hero.jumpping = true;
+            return;
+        }
+        if(hero.jumpping){
+            hero.jumpping = hero.y <= 0;
+            return;
+        }
+            
+        //hero.body.vy = hero.body.vy + 16;
+        hero.y = hero.y + 4;
     },
-    jumpping: function(){
-        return false;
-    },
+    //TODO: Fix typo, jumpping is jumping
+    jumpping: false,
     stop: function(hero){
         if(!hero.currentAction)
             return;
         hero.currentAction.stop();
-        if(!hero.currentAction.isDone() || hero.jumpping())
+        if(!hero.currentAction.isDone() || hero.jumpping)
             return;
         hero.stopAllActions();
         hero.currentAction = null;
