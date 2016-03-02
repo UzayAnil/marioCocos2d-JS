@@ -13,17 +13,7 @@
 
     "jsList" : [
         "src/Resource.js",
-        "src/Constants.js",
-        "src/Utils.js",
-        
-        "src/Actions.js",
-        "src/CacheAnimationLoader.js",
-        "src/Singletons.js",
-        
-        "src/Animations.js",
-        "src/Goomba.js",
-        "src/Hero.js",
-        
+        "src/ScenesManager.js",
         "src/World.js"
     ]
 }
