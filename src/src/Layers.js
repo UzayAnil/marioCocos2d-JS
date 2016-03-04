@@ -1,4 +1,12 @@
 (function () {
+    /**
+     * Add an static tilemap object to given physics space
+     * @param {cc.TMXTiledMap} map     The map containing the objects
+     * @param {string} objName The key of the objects to be added
+     * @param {cp.Space}   space   The physics space where object will be added
+     * @param {object}   prop    A javascript object with prop.elasticity and prop.friction values 
+     */
+    
     function convertToStaticShape(map, objName, space, prop){
         var mapObjects = 
                 map.getObjectGroup(objName)
