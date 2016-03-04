@@ -1,4 +1,4 @@
-(function () {
+(function(){
     /**
      * Add an static tilemap object to given physics space
      * @param {cc.TMXTiledMap} map     The map containing the objects
@@ -22,7 +22,7 @@
                         //Are strings values
                         var v1 = cp.v(parseInt(p1.x) + obj.x, (-parseInt(p1.y)) + obj.y);
                         var v2 = cp.v(parseInt(p2.x) + obj.x, (-parseInt(p2.y)) + obj.y);
-                        var seg = new cp.SegmentShape(space.staticBody, v1 , v2, 1);
+                        var seg = new cp.SegmentShape(space.staticBody, v1 , v2, 0);
                         staticsObjs.push(seg);
                         p1 = p2;
                     }
@@ -36,13 +36,6 @@
                 space.addStaticShape(obj);
             });
     }
-    
-    var AnimationLayer = cc.Layer.extend({
-        ctor: function () {
-            this._super();
-            return true;
-        },
-    });
     
     var WorldTmx = cc.TMXTiledMap.extend({
         ctor: function(map){
@@ -61,23 +54,21 @@
     });
     
     var WorldLayer = cc.Layer.extend({
-        space: null,
         map: null,
-        ctor: function (prop) {
+        ctor: function (prop) {            
             this._super();
-            this.space = gm.ph.space;
             this.map = new WorldTmx(prop.map());
             this.addChild(this.map);
             cc.director.setDepthTest(true);
-            this.initPhysics();
+            this.addFloorsAndWalls();
+            //this.runAction(cc.follow(gm.hero, cc.rect(0, 0, this.width, this.height)));
             return true;
         },
-        initPhysics: function() {
+        addFloorsAndWalls: function() {
             convertToStaticShape(this.map.getObjects(this.map.ObjKeys.Floors), gm.ph.space, {elasticity: 0, friction: 0.3});
             convertToStaticShape(this.map.getObjects(this.map.ObjKeys.Walls), gm.ph.space, {elasticity: 0, friction: 0.3})
         }
     });
     
-    gm.AnimationLayer = AnimationLayer;
     gm.WorldLayer = WorldLayer;
 })();
