@@ -58,10 +58,7 @@
             this.addChild(this.map);
             cc.director.setDepthTest(true);
             this.initPhysics();
-            this.attr = {
-                anchorX: 0,
-                anchorY: 0
-            };
+            
             return true;
         },
         initPhysics: function() {
