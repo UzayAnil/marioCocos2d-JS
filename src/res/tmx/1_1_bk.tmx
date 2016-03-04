@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="224" height="15" tilewidth="16" tileheight="16" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="224" height="15" tilewidth="16" tileheight="16" nextobjectid="8">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16" tilecount="924" columns="33">
   <image source="tiles.png" width="528" height="448"/>
  </tileset>
@@ -13,7 +13,26 @@
    H4sIAAAAAAAAC+3UQQ7CIBBGYdobqDdR0ZOqN6kez9mYELUU+LG08X0JK5uZl1noHAAAUFx65672br0+Q52j7Kaf/qXIuclg39ztPUa+DW8zNvM1IzYnB/2fs+hPV+M/QTF1k5JZNe+TupN++pWdc+wCAAAAAADA72y71gUa+tuiv9zGdu/t7QobWt9e7W/t3++/9v4auw/2jhMN3n47Be/cxdt98J3Cv+2s2Z+yd8n9a7r/t645+mPUfgAAkO8J14yNlIA0AAA=
   </data>
  </layer>
- <imagelayer name="Guide" visible="0" opacity="0.19">
+ <objectgroup name="Floors">
+  <object id="1" x="0" y="207">
+   <polyline points="0,1 96,1 96,33"/>
+  </object>
+  <object id="2" x="192" y="264">
+   <polyline points="0,-56 112,-56 112,-24"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="Walls">
+  <object id="3" x="0.5" y="207.5">
+   <polyline points="-0.5,0.5 -0.5,-207.5 3327.5,-207.5 3327.48,0.5"/>
+  </object>
+  <object id="5" x="3328" y="32">
+   <polyline points="0,0 16,0 16,176 64,176 64,128 176,128 176,176 256,176"/>
+  </object>
+  <object id="7" x="3584" y="208">
+   <polyline points="0,0 0,-208 -256,-208"/>
+  </object>
+ </objectgroup>
+ <imagelayer name="Guide" visible="0" opacity="0.04">
   <image source="1_1.png"/>
  </imagelayer>
 </map>
