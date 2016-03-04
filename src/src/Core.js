@@ -1,8 +1,8 @@
 var gm = {};
 (function () {
     var GameManager = cc.Class.extend({
-        ph: {},
-        sc: {},
+        ph: null,
+        sc: null,
         init: function () {
             this.ph.init();
             this.sc.init(this.ph.space);
@@ -10,20 +10,34 @@ var gm = {};
     });
 
     var PhysicsManager = cc.Class.extend({
-        space: {},
+        space: new cp.Space(),
+        debugNode: null,
         init: function () {
-            this.space = new cp.Space();
             this.space.gravity = cp.v(0, -350);
+            this.debugNode = new cc.PhysicsDebugNode(this.space);
         }
     });
 
+    var World = cc.Scene.extend({
+        ctor: function (prop) {
+            this._super();
+            this.addChild(new gm.WorldLayer(prop), 1);
+            this.addChild(new gm.AnimationLayer(), 2);
+            this.scheduleUpdate();
+            return true;
+        },
+        update: function(dt){
+            gm.ph.space.step(dt);
+        }
+    });
+    
     var ScenesManager = cc.Class.extend({
-        init: function (space) {
+        init: function () {
             var lastWorld = new World({
                 map: function () {
                     return resources.bkTiles;
                 }
-            }, space);
+            });
             cc.director.runScene(lastWorld);
         }
     });

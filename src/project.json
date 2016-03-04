@@ -10,6 +10,6 @@
 	"jsList" : [
         "src/Resource.js",
         "src/Core.js",
-        "src/World.js"
+        "src/Layers.js"
     ]
 }
