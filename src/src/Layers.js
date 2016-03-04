@@ -5,12 +5,8 @@
      * @param {string} objName The key of the objects to be added
      * @param {cp.Space}   space   The physics space where object will be added
      * @param {object}   prop    A javascript object with prop.elasticity and prop.friction values 
-     */
-    
-    function convertToStaticShape(map, objName, space, prop){
-        var mapObjects = 
-                map.getObjectGroup(objName)
-                .getObjects();
+     */  
+    function convertToStaticShape(mapObjects, space, prop){
             var staticsObjs = [];
             
             mapObjects
@@ -48,23 +44,37 @@
         },
     });
     
+    var WorldTmx = cc.TMXTiledMap.extend({
+        ctor: function(map){
+            this._super(map);
+            return true;
+        },
+        ObjKeys: {
+            Walls: "Walls",
+            Floors: "Floors"
+        },
+        getObjects: function(key){
+            return this
+                .getObjectGroup(key)
+                .getObjects();
+        }
+    });
+    
     var WorldLayer = cc.Layer.extend({
         space: null,
         map: null,
         ctor: function (prop) {
             this._super();
             this.space = gm.ph.space;
-            this.map = new cc.TMXTiledMap(prop.map());
+            this.map = new WorldTmx(prop.map());
             this.addChild(this.map);
             cc.director.setDepthTest(true);
             this.initPhysics();
-            
             return true;
         },
         initPhysics: function() {
-            var self = this;
-            convertToStaticShape(this.map, "Floors", gm.ph.space, {elasticity: 0, friction: 0.3});
-            convertToStaticShape(this.map, "Walls", gm.ph.space, {elasticity: 0, friction: 0.3})
+            convertToStaticShape(this.map.getObjects(this.map.ObjKeys.Floors), gm.ph.space, {elasticity: 0, friction: 0.3});
+            convertToStaticShape(this.map.getObjects(this.map.ObjKeys.Walls), gm.ph.space, {elasticity: 0, friction: 0.3})
         }
     });
     
