@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="224" height="15" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16" tilecount="924" columns="33">
+  <image source="tiles.png" width="528" height="448"/>
+ </tileset>
+ <layer name="Background" width="224" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3VsQnDQAyG0XMWyhDGA2U8b5cqzRlcWIf/i3nFa4UQfGh/tbYDl7xbTXp/+Gf6g5yt6+lzQn8wVt+f/wf30R/k6A9y9Ac5+oMc/UGO/iCn7287oT8YS3+QU+1v4eB32xEzqnOe4Ml3WIvS+89If/Pdc1bV/r6U+D5DgDQAAA==
+  </data>
+ </layer>
+ <layer name="OverBackground" width="224" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3UQQ7CIBBGYdobqDdR0ZOqN6kez9mYELUU+LG08X0JK5uZl1noHAAAUFx65672br0+Q52j7Kaf/qXIuclg39ztPUa+DW8zNvM1IzYnB/2fs+hPV+M/QTF1k5JZNe+TupN++pWdc+wCAAAAAADA72y71gUa+tuiv9zGdu/t7QobWt9e7W/t3++/9v4auw/2jhMN3n47Be/cxdt98J3Cv+2s2Z+yd8n9a7r/t645+mPUfgAAkO8J14yNlIA0AAA=
+  </data>
+ </layer>
+ <imagelayer name="Guide" visible="0" opacity="0.19">
+  <image source="1_1.png"/>
+ </imagelayer>
+</map>

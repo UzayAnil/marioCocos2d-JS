@@ -1,19 +1,15 @@
 {
     "project_type": "javascript",
-
     "debugMode" : 1,
     "showFPS" : true,
     "frameRate" : 60,
-    "noCache" : true,
     "id" : "gameCanvas",
-    "renderMode" : 1,
-    "engineDir":"frameworks/cocos2d-html5",
-
-    "modules" : ["cocos2d", "chipmunk"],
-
-    "jsList" : [
+	"renderMode" : 1,
+	"engineDir":"frameworks/cocos2d-html5",
+	"modules" : ["cocos2d", "chipmunk"],
+	"jsList" : [
         "src/Resource.js",
-        "src/ScenesManager.js",
+        "src/Core.js",
         "src/World.js"
     ]
 }
