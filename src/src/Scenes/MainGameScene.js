@@ -1,9 +1,9 @@
 (function(){
-    var WorldScene = cc.Scene.extend({
+    var MainGameScene = cc.Scene.extend({
         ctor: function (prop) {
             this._super();
             this.addChild(new gm.WorldLayer(prop), 1);
-            //this.addChild(new gm.AnimationLayer(), 2);
+            this.addChild(new gm.AnimationLayer(), 2);
             this.addChild(gm.ph.debugNode, 100);
             this.scheduleUpdate();
             return true;
@@ -12,5 +12,5 @@
             gm.ph.space.step(dt);
         }
     });
-    gm.WorldScene = WorldScene;
+    gm.MainGameScene = MainGameScene;
 })();

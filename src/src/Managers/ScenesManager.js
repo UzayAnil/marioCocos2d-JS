@@ -1,7 +1,7 @@
 (function(){
     var ScenesManager = cc.Class.extend({
         init: function () {            
-            var lastWorld = new gm.WorldScene({
+            var lastWorld = new gm.MainGameScene({
                 map: function () {
                     return resources.bkTiles;
                 }

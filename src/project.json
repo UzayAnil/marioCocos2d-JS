@@ -13,7 +13,9 @@
         "src/Managers/GameManager.js",
         "src/Managers/PhysicsManager.js",
         "src/Managers/ScenesManager.js",
-        "src/Scenes/WorldScene.js",
-        "src/Layers/WorldLayer.js"
+        "src/Scenes/MainGameScene.js",
+        "src/Layers/WorldLayer.js",
+        "src/Layers/AnimationLayer.js",
+        "src/Characters/Hero.js"
     ]
 }
