@@ -5,7 +5,10 @@
             gm.bkMap = new gm.BackgroundWorld(resources.bkTiles);
             var startPoint = gm.bkMap.getObjects(gm.bkMap.ObjKeys.StartPoint)[0];
             gm.hero.body.setPos(cc.p( startPoint.x,  startPoint.y));
-            cc.director.runScene(gm.sc.firstScene());
+            var scene = gm.sc.firstScene();
+            cc.director.runScene(scene);
+            gm.cm.init(scene.animationLayer);
+            gm.cm.focus(gm.hero);
         }
     });
     gm.gameManager = new GameManager();

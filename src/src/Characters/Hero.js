@@ -14,6 +14,9 @@
             this.setBody(body);
             
             return true;
+        },
+        onRight: function(){
+            this.
         }
     });
     gm.Hero = Hero;

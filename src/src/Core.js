@@ -11,6 +11,7 @@ var gm = {};
         gameManager: null,
         BackgroundWorld: null,
         Hero: null,
+        cm: null,
         init: function(){
             this.load();
             this.gameManager.init();
