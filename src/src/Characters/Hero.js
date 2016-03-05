@@ -3,8 +3,7 @@
         ctor: function(frame){
             this._super(frame);
             
-            var body = new cp.Body(1, cp.momentForBox(1, this.width, this.height));
-            body.setPos(cc.p(50, 100));
+            var body = new cp.Body(0.01, cp.momentForBox(0.01, this.width, this.height));
             gm.ph.space.addBody(body);
 
             var shape = new cp.BoxShape(body, this.width, this.height);

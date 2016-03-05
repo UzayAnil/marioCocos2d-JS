@@ -44,7 +44,7 @@
             this.addChild(gm.bkMap);
             cc.director.setDepthTest(true);
             this.addFloorsAndWalls();
-//            this.runAction(cc.follow(gm.hero, cc.rect(0, 0, this.width, this.height)));
+            this.runAction(cc.follow(gm.hero, cc.rect(0, 0, this.width, this.height)));
             return true;
         },
         addFloorsAndWalls: function() {

@@ -32,8 +32,8 @@
    <polyline points="0,0 0,-208 -256,-208"/>
   </object>
  </objectgroup>
- <objectgroup name="Hero">
-  <object id="10" name="StartPoint" type="StartPoint" x="40" y="192" width="16" height="16"/>
+ <objectgroup name="StartPoint">
+  <object id="10" name="StartPoint" type="StartPoint" x="40" y="128" width="16" height="16"/>
  </objectgroup>
  <imagelayer name="Guide" visible="0" opacity="0.04">
   <image source="1_1.png"/>

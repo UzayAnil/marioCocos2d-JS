@@ -7,7 +7,7 @@
         ObjKeys: {
             Walls: "Walls",
             Floors: "Floors",
-            StartPoint: "StarPoint"
+            StartPoint: "StartPoint"
         },
         getObjects: function(key){
             return this
