@@ -7,9 +7,19 @@ var gm = {};
         sc: null,
         hero: null,
         charactersSpriteSheet: null,
+        bkMap: null,
+        gameManager: null,
+        BackgroundWorld: null,
+        Hero: null,
         init: function(){
+            this.load();
+            this.gameManager.init();
+        },
+        /**
+         * Load game resources like sprite sheets and animations.
+         */
+        load: function(){
             this.loadSpritesSheets();
-            gm.hero = new gm.Hero();
         },
         loadSpritesSheets: function(){
             cc.spriteFrameCache.addSpriteFrames(resources.charactersPlist);

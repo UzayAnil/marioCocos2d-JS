@@ -3,7 +3,7 @@
         ctor: function () {
             this._super();
             this.addChild(gm.charactersSpriteSheet);
-            gm.charactersSpriteSheet.addChild(gm.hero);
+            gm.charactersSpriteSheet.addChild(gm.hero);            
             return true;
         },
     });

@@ -16,7 +16,6 @@ cc.game.onStart = function () {
     //load resources
     cc.LoaderScene.preload(res, function () {
         gm.init();
-        gm.sc.init();
     }, this);
 };
 cc.game.run();

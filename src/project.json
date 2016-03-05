@@ -10,6 +10,7 @@
 	"jsList" : [
         "src/Resource.js",
         "src/Core.js",
+        "src/WorldMaps/BackgroundWorld.js",
         "src/Managers/GameManager.js",
         "src/Managers/PhysicsManager.js",
         "src/Managers/ScenesManager.js",

@@ -37,36 +37,19 @@
             });
     }
     
-    var WorldTmx = cc.TMXTiledMap.extend({
-        ctor: function(map){
-            this._super(map);
-            return true;
-        },
-        ObjKeys: {
-            Walls: "Walls",
-            Floors: "Floors"
-        },
-        getObjects: function(key){
-            return this
-                .getObjectGroup(key)
-                .getObjects();
-        }
-    });
-    
     var WorldLayer = cc.Layer.extend({
         map: null,
         ctor: function (prop) {            
             this._super();
-            this.map = new WorldTmx(prop.map());
-            this.addChild(this.map);
+            this.addChild(gm.bkMap);
             cc.director.setDepthTest(true);
             this.addFloorsAndWalls();
-            //this.runAction(cc.follow(gm.hero, cc.rect(0, 0, this.width, this.height)));
+//            this.runAction(cc.follow(gm.hero, cc.rect(0, 0, this.width, this.height)));
             return true;
         },
         addFloorsAndWalls: function() {
-            convertToStaticShape(this.map.getObjects(this.map.ObjKeys.Floors), gm.ph.space, {elasticity: 0, friction: 0.3});
-            convertToStaticShape(this.map.getObjects(this.map.ObjKeys.Walls), gm.ph.space, {elasticity: 0, friction: 0.3})
+            convertToStaticShape(gm.bkMap.getObjects(gm.bkMap.ObjKeys.Floors), gm.ph.space, {elasticity: 0, friction: 0.3});
+            convertToStaticShape(gm.bkMap.getObjects(gm.bkMap.ObjKeys.Walls), gm.ph.space, {elasticity: 0, friction: 0.3})
         }
     });
     

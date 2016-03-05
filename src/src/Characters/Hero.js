@@ -1,12 +1,10 @@
 (function(){
     var Hero = cc.PhysicsSprite.extend({
-        ctor: function(){
-            this._super("#Frame1.png");
-            
-            
+        ctor: function(frame){
+            this._super(frame);
             
             var body = new cp.Body(1, cp.momentForBox(1, this.width, this.height));
-            body.setPos(cc.p(100, 100));
+            body.setPos(cc.p(50, 100));
             gm.ph.space.addBody(body);
 
             var shape = new cp.BoxShape(body, this.width, this.height);
