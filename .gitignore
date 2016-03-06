@@ -91,3 +91,7 @@ docs/html/*
 
 src/frameworks/cocos2d-x
 src/frameworks/runtime-src
+
+
+# Ignore all Texture Packer files becuase It contains absolute path
+*.tps
