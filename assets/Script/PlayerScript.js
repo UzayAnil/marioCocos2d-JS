@@ -16,6 +16,8 @@ cc.Class({
         speedY:0,
         maxSpeedX:45,
         maxSpeedY:1,
+        jumpSpeed:50,
+        jumping:false,
         accelerationX:0.5,
         frictionX:0.5,
         isGrounded:false,
@@ -40,6 +42,11 @@ cc.Class({
         // isGrounded = true
         
         this.checkGround();
+        
+        if (this.jumping) {
+            this.isGrounded = false;
+            this.jumping = false;
+        }
         
         if (!this.isGrounded)
         {
@@ -82,12 +89,13 @@ cc.Class({
             case cc.KEY.right:
                 this.direction = 1;
                 break;
-            case cc.KEY.w:
-            case cc.KEY.up:
-                if (!this.jumping) {
+            case cc.KEY.k:
+            case cc.KEY.z:
+                if (!this.jumping && this.isGrounded) {
                     this.jumping = true;
-                    this.speed.y = this.jumpSpeed;    
+                    this.speedY = this.jumpSpeed;    
                 }
+                cc.log(this.jumping);
                 break;
         }
     },
@@ -104,7 +112,25 @@ cc.Class({
     },
     
     checkGround: function() {
-        this.map.getLayer(cc.p(0, 0));
-        this.isGrounded = false;
+        var layer = this.map.getLayer("bricks");
+        
+        var size = layer.getLayerSize();
+        
+        var xPos = Math.floor(this.node.x / 16);
+        var yPos = size.height - Math.floor(this.node.y / 16);
+
+        if (yPos > size.height) { this.isGrounded = false; return; }
+        if (xPos > size.width) { this.isGrounded = false; return; }
+        if (yPos < 0) { this.isGrounded = false; return; }
+        if (xPos < 0) { this.isGrounded = false; return; }
+        
+        var id = layer.getTileGIDAt(xPos, yPos);
+
+        // cc.log(size.width); ////xPos + " " + yPos + " id= " + id);
+        
+        if (id !== 0)
+            this.isGrounded = true;
+        else
+            this.isGrounded = false;
     }
 });

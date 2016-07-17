@@ -29,9 +29,9 @@ cc.Class({
             
         this.level.x = -this.cameraX;
         
-        if (this.player.x <= this.cameraX) {
+        if (this.player.x <= this.cameraX + 8) {
             // stop the player
-            this.player.x = this.cameraX;
+            this.player.x = this.cameraX + 8;
             cc.log("Player is touching the camera");
         }
     },
