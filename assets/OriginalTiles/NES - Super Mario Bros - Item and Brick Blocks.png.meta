@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "8bc836ab-6368-4ca0-93f2-28030d9860d2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "NES - Super Mario Bros - Item and Brick Blocks": {
+      "ver": "1.0.3",
+      "uuid": "c252585e-779f-4ae1-a606-1c8017f49d01",
+      "rawTextureUuid": "8bc836ab-6368-4ca0-93f2-28030d9860d2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -1,
+      "trimX": 1,
+      "trimY": 2,
+      "width": 447,
+      "height": 254,
+      "rawWidth": 448,
+      "rawHeight": 256,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

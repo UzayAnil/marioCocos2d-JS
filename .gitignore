@@ -95,3 +95,9 @@ src/frameworks/runtime-src
 
 # Ignore all Texture Packer files becuase It contains absolute path
 *.tps
+
+# Ignore folders
+build/*
+library/*
+local/*
+temp/*

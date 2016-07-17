@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "ec4e1e1d-c73c-466b-925d-74d73352d516",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "NES - Super Mario Bros - Items Objects": {
+      "ver": "1.0.3",
+      "uuid": "9163653d-c642-4ead-8cb8-e557db54747c",
+      "rawTextureUuid": "ec4e1e1d-c73c-466b-925d-74d73352d516",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 576,
+      "height": 336,
+      "rawWidth": 576,
+      "rawHeight": 336,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
